@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ong Solidária</title>
+    <meta
+      name="description"
+      content="Conheça a ONG Solidária: missão, visão, valores e formas de contato."
+    />
+    <meta name="theme-color" content="#22c55e" />
+    <meta property="og:title" content="ONG Solidária" />
+    <meta
+      property="og:description"
+      content="Missão, visão, valores e canais de contato da ONG Solidária."
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="index.html" aria-label="Página inicial da ONG Solidária"
+          >ONG Solidária</a
+        >
+      </div>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="conteudo">
+      <section aria-labelledby="titulo-missao">
+        <h1 id="titulo-missao">Missão, Visão e Valores</h1>
+        <p><!-- Descrição breve da missão/visão/valores --></p>
+        <figure>
+          <img
+            src="imagens/atuação social da ONG.jpg"
+            alt="Imagem ilustrativa da atuação social da ONG"
+          />
+          <figcaption>Atuação e impacto social.</figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="titulo-historia">
+        <h2 id="titulo-historia">Quem Somos</h2>
+        <p><!-- Breve histórico da organização --></p>
+      </section>
+
+      <aside aria-labelledby="titulo-transparencia">
+        <h2 id="titulo-transparencia">Transparência</h2>
+        <ul>
+          <li><!-- Link para relatórios anuais --></li>
+          <li><!-- Link para demonstrações financeiras --></li>
+        </ul>
+      </aside>
+
+      <section aria-labelledby="titulo-contato">
+        <h2 id="titulo-contato">Contato</h2>
+        <address>
+          <!-- Endereço físico -->
+          <!-- E-mail e telefone -->
+        </address>
+        <figure>
+          <img src="imagens/local.jpg" alt="Mapa do local da ONG" />
+          <figcaption>Onde estamos.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        &copy; <span id="ano">2025</span> ONG Solidária. Todos os direitos
+        reservados.
+      </p>
+      <nav aria-label="Links de rodapé">
+        <ul>
+          <li><a href="#" rel="nofollow">Política de Privacidade</a></li>
+          <li><a href="#" rel="nofollow">Termos de Uso</a></li>
+        </ul>
+      </nav>
+    </footer>
+
+    <script>
+      (function () {
+        var span = document.getElementById("ano");
+        if (span) {
+          span.textContent = new Date().getFullYear().toString();
+        }
+      })();
+    </script>
+  </body>
+</html>
