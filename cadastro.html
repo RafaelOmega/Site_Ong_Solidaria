@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cadastre-se na ONG Exemplo para ser voluntário, fazer doações ou receber nossas notícias. Seus dados estão seguros conosco."
+    />
+    <meta
+      name="keywords"
+      content="cadastro, voluntário, doador, formulário, contato, ONG, organização"
+    />
+    <meta name="author" content="ONG Exemplo" />
+    <title>Cadastro - ONG Exemplo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="index.html" class="logo">ONG Exemplo</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html" class="active">Cadastro</a></li>
+            <li><a href="index.html#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="registration-form">
+        <div class="container">
+          <h1>Formulário de Cadastro</h1>
+          <p>
+            Preencha o formulário abaixo para fazer parte da nossa comunidade e
+            receber novidades sobre nossos projetos.
+          </p>
+
+          <form action="#" method="POST">
+            <fieldset>
+              <legend>Dados Pessoais</legend>
+              <div class="form-group">
+                <label for="name">Nome Completo:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Seu nome completo"
+                  required
+                  aria-label="Nome Completo"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seu.email@exemplo.com"
+                  required
+                  aria-label="E-mail"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input
+                  type="text"
+                  id="cpf"
+                  name="cpf"
+                  placeholder="000.000.000-00"
+                  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                  title="Formato: 000.000.000-00"
+                  required
+                  aria-label="CPF"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefone:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="(00) 00000-0000"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}"
+                  title="Formato: (00) 00000-0000 ou (00) 0000-0000"
+                  required
+                  aria-label="Telefone"
+                />
+              </div>
+              <div class="form-group">
+                <label for="dob">Data de Nascimento:</label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  required
+                  aria-label="Data de Nascimento"
+                />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Endereço</legend>
+              <div class="form-group">
+                <label for="address">Endereço Completo:</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Rua, número, complemento"
+                  required
+                  aria-label="Endereço Completo"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input
+                  type="text"
+                  id="cep"
+                  name="cep"
+                  placeholder="00000-000"
+                  pattern="\d{5}-\d{3}"
+                  title="Formato: 00000-000"
+                  required
+                  aria-label="CEP"
+                />
+              </div>
+              <div class="form-group">
+                <label for="city">Cidade:</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="Sua cidade"
+                  required
+                  aria-label="Cidade"
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">Estado:</label>
+                <select id="state" name="state" required aria-label="Estado">
+                  <option value="">Selecione o Estado</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="reset" class="btn">Limpar</button>
+              <button type="submit" class="btn">Enviar Cadastro</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 ONG Exemplo. Todos os direitos reservados.</p>
+        <p>Rua da Esperança, 123 - Centro, Cidade Futura - CF</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"
+            ><span class="icon-facebook">FB</span></a
+          >
+          <a href="#" aria-label="Instagram"
+            ><span class="icon-instagram">IG</span></a
+          >
+          <a href="#" aria-label="Twitter"
+            ><span class="icon-twitter">TW</span></a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
