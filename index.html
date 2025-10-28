@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="ONG Exemplo - Transformando Vidas através de Projetos Sociais. Conheça nossa missão, impacto e como você pode ajudar."
+      content="ONG Solidária - Transformando Vidas através de Projetos Sociais. Conheça nossa missão, impacto e como você pode ajudar."
     />
     <meta
       name="keywords"
       content="ONG, organização não governamental, projetos sociais, doação, voluntariado, impacto social, caridade, causas sociais"
     />
-    <meta name="author" content="ONG Exemplo" />
-    <title>ONG Exemplo - Transformando Vidas</title>
+    <meta name="author" content="ONG Solidária" />
+    <title>ONG Solidária - Transformando Vidas</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -20,19 +20,58 @@
     />
   </head>
   <body>
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Overlay para menu mobile -->
+    <div class="overlay" id="overlay"></div>
+
     <header>
       <div class="container">
-        <a href="index.html" class="logo">ONG Exemplo</a>
-        <nav>
+        <a href="index.html" class="logo">ONG Solidária</a>
+
+        <!-- Menu Desktop -->
+        <nav id="mainNav">
           <ul>
             <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
+            <li>
+              <a href="projetos.html">Projetos</a>
+              <ul class="dropdown">
+                <li><a href="projetos.html#educacao">Educação</a></li>
+                <li><a href="projetos.html#saude">Saúde</a></li>
+                <li><a href="projetos.html#meio-ambiente">Meio Ambiente</a></li>
+                <li>
+                  <a href="projetos.html#assistencia">Assistência Social</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
         </nav>
+
+        <!-- Botão Menu Hambúrguer -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="projetos.html#educacao">→ Educação</a></li>
+        <li><a href="projetos.html#saude">→ Saúde</a></li>
+        <li><a href="projetos.html#meio-ambiente">→ Meio Ambiente</a></li>
+        <li><a href="projetos.html#assistencia">→ Assistência Social</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
 
     <main>
       <section class="hero">
@@ -43,7 +82,7 @@
             promovendo a educação, saúde e desenvolvimento social. Junte-se a
             nós!
           </p>
-          <a href="projetos.html" class="btn">Conheça Nossos Projetos</a>
+          <a href="projetos.html" class="btn btn-lg">Conheça Nossos Projetos</a>
         </div>
       </section>
 
@@ -53,7 +92,7 @@
           <div class="content">
             <div class="text-content">
               <p>
-                A ONG Exemplo foi fundada em 2005 por um grupo de voluntários
+                A ONG Solidária foi fundada em 2005 por um grupo de voluntários
                 dedicados, com o objetivo de combater a desigualdade social e
                 promover oportunidades para crianças e famílias em situação de
                 vulnerabilidade. Desde então, crescemos e expandimos nossos
@@ -65,7 +104,23 @@
                 desenvolvimento. Nossos valores fundamentais são integridade,
                 solidariedade, transparência e respeito.
               </p>
-              <a href="cadastro.html" class="btn btn-primary"
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  flex-wrap: wrap;
+                  margin-top: 24px;
+                "
+              >
+                <span class="badge badge-primary">Integridade</span>
+                <span class="badge badge-secondary">Solidariedade</span>
+                <span class="badge badge-info">Transparência</span>
+                <span class="badge badge-success">Respeito</span>
+              </div>
+              <a
+                href="cadastro.html"
+                class="btn btn-primary"
+                style="margin-top: 24px"
                 >Seja um Voluntário</a
               >
             </div>
@@ -105,7 +160,7 @@
       <section id="team" class="team-section">
         <div class="container">
           <h2>Nossa Equipe</h2>
-          <p>Conheça os rostos por trás da ONG Exemplo:</p>
+          <p>Conheça os rostos por trás da ONG Solidária:</p>
           <div class="team-grid">
             <article class="team-member">
               <img src="imagens/team-member-1.jpg" alt="Maria Silva" />
@@ -145,8 +200,8 @@
             </p>
             <p>
               <strong>E-mail:</strong>
-              <a href="mailto:contato@ongexemplo.org.br"
-                >contato@ongexemplo.org.br</a
+              <a href="mailto:contato@ongSolidaria.org.br"
+                >contato@ongSolidaria.org.br</a
               >
             </p>
           </div>
@@ -156,13 +211,71 @@
               alt="Mapa de localização da ONG"
             />
           </div>
+          <div style="text-align: center; margin-top: 32px">
+            <button class="btn btn-primary" onclick="showContactModal()">
+              Enviar Mensagem
+            </button>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- Modal de Contato -->
+    <div class="modal" id="contactModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Envie sua Mensagem</h3>
+          <button class="modal-close" onclick="closeContactModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="modalName">Nome:</label>
+              <input type="text" id="modalName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="modalEmail">E-mail:</label>
+              <input type="email" id="modalEmail" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="modalMessage">Mensagem:</label>
+              <textarea
+                id="modalMessage"
+                name="message"
+                rows="5"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid var(--color-gray-300);
+                  border-radius: 8px;
+                  font-family: inherit;
+                  resize: vertical;
+                "
+                required
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn"
+            style="background-color: var(--color-gray-400)"
+            onclick="closeContactModal()"
+          >
+            Cancelar
+          </button>
+          <button class="btn btn-primary" onclick="submitContactForm()">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="container">
-        <p>&copy; 2023 ONG Exemplo. Todos os direitos reservados.</p>
+        <p>&copy; 2023 ONG Solidária. Todos os direitos reservados.</p>
         <p>Rua da Esperança, 123 - Centro, Cidade Futura - CF</p>
         <div class="social-links">
           <a href="https://facebook.com/sua-ong" aria-label="Facebook">

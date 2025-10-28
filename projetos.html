@@ -5,38 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Conheça os projetos sociais da ONG Exemplo. Descubra como contribuímos para a educação, saúde e desenvolvimento comunitário."
+      content="Conheça os projetos sociais da ONG Solidária. Descubra como contribuímos para a educação, saúde e desenvolvimento comunitário."
     />
     <meta
       name="keywords"
       content="projetos sociais, educação, saúde, meio ambiente, desenvolvimento comunitário, voluntariado, doação"
     />
-    <meta name="author" content="ONG Exemplo" />
-    <title>Nossos Projetos - ONG Exemplo</title>
+    <meta name="author" content="ONG Solidária" />
+    <title>Nossos Projetos - ONG Solidária</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Overlay para menu mobile -->
+    <div class="overlay" id="overlay"></div>
+
     <header>
       <div class="container">
-        <a href="index.html" class="logo">ONG Exemplo</a>
-        <nav>
+        <a href="index.html" class="logo">ONG Solidária</a>
+
+        <!-- Menu Desktop -->
+        <nav id="mainNav">
           <ul>
             <li><a href="index.html">Início</a></li>
-            <li><a href="projetos.html" class="active">Projetos</a></li>
+            <li>
+              <a href="projetos.html" class="active">Projetos</a>
+              <ul class="dropdown">
+                <li><a href="#educacao">Educação</a></li>
+                <li><a href="#saude">Saúde</a></li>
+                <li><a href="#meio-ambiente">Meio Ambiente</a></li>
+                <li><a href="#assistencia">Assistência Social</a></li>
+              </ul>
+            </li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="index.html#contact">Contato</a></li>
           </ul>
         </nav>
+
+        <!-- Botão Menu Hambúrguer -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="#educacao">→ Educação</a></li>
+        <li><a href="#saude">→ Saúde</a></li>
+        <li><a href="#meio-ambiente">→ Meio Ambiente</a></li>
+        <li><a href="#assistencia">→ Assistência Social</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="index.html#contact">Contato</a></li>
+      </ul>
+    </div>
 
     <main>
       <section id="projects" class="projects-section">
         <div class="container">
           <h1>Nossos Projetos Sociais</h1>
           <p>Conheça as iniciativas que transformam vidas e comunidades:</p>
+
+          <!-- Filtros por categoria -->
+          <div style="text-align: center; margin-bottom: 32px">
+            <span class="tag" data-filter="all">Todos</span>
+            <span class="tag" data-filter="educacao">Educação</span>
+            <span class="tag" data-filter="saude">Saúde</span>
+            <span class="tag" data-filter="meio-ambiente">Meio Ambiente</span>
+            <span class="tag" data-filter="assistencia"
+              >Assistência Social</span
+            >
+          </div>
+
           <div class="project-grid">
-            <article class="project-card">
+            <article
+              class="project-card"
+              data-category="educacao"
+              id="educacao"
+            >
               <img
                 src="imagens/projeto-educacao.jpg"
                 alt="Crianças em sala de aula"
@@ -49,10 +106,16 @@
                   escrita para crianças e adolescentes, visando reduzir a evasão
                   escolar e melhorar o desempenho acadêmico.
                 </p>
-                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                <button
+                  class="btn btn-primary"
+                  onclick="showProjectModal('educacao')"
+                >
+                  Saiba Mais
+                </button>
               </div>
             </article>
-            <article class="project-card">
+
+            <article class="project-card" data-category="saude" id="saude">
               <img
                 src="imagens/projeto-saude.jpg"
                 alt="Pessoas recebendo atendimento médico"
@@ -65,10 +128,20 @@
                   sobre higiene e prevenção de doenças em bairros com pouco
                   acesso a serviços de saúde.
                 </p>
-                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                <button
+                  class="btn btn-primary"
+                  onclick="showProjectModal('saude')"
+                >
+                  Saiba Mais
+                </button>
               </div>
             </article>
-            <article class="project-card">
+
+            <article
+              class="project-card"
+              data-category="meio-ambiente"
+              id="meio-ambiente"
+            >
               <img
                 src="imagens/plantando-arvores.jpg"
                 alt="Voluntários plantando árvores"
@@ -81,10 +154,20 @@
                   ações de limpeza em áreas verdes urbanas, incentivando a
                   sustentabilidade e o respeito à natureza.
                 </p>
-                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                <button
+                  class="btn btn-primary"
+                  onclick="showProjectModal('meio-ambiente')"
+                >
+                  Saiba Mais
+                </button>
               </div>
             </article>
-            <article class="project-card">
+
+            <article
+              class="project-card"
+              data-category="assistencia"
+              id="assistencia"
+            >
               <img
                 src="imagens/distribuicao-alimentos.jpg"
                 alt="Distribuição de alimentos"
@@ -97,7 +180,12 @@
                   de insegurança alimentar, garantindo refeições dignas e
                   nutritivas.
                 </p>
-                <a href="#" class="btn btn-primary">Saiba Mais</a>
+                <button
+                  class="btn btn-primary"
+                  onclick="showProjectModal('assistencia')"
+                >
+                  Saiba Mais
+                </button>
               </div>
             </article>
           </div>
@@ -131,7 +219,7 @@
                   talento para um mundo melhor.
                 </li>
               </ol>
-              <a href="cadastro.html" class="btn"
+              <a href="cadastro.html" class="btn btn-lg"
                 >Cadastre-se como Voluntário</a
               >
             </div>
@@ -156,7 +244,7 @@
                 <li>
                   <strong>Transferência Bancária:</strong>
                   <ul>
-                    <li>Banco: Exemplo S.A. (001)</li>
+                    <li>Banco: Solidária S.A. (001)</li>
                     <li>Agência: 0001</li>
                     <li>Conta Corrente: 12345-6</li>
                     <li>CNPJ: 00.000.000/0001-00</li>
@@ -168,8 +256,8 @@
                     <li>Chave CNPJ: 00.000.000/0001-00</li>
                     <li>
                       ou Chave E-mail:
-                      <a href="mailto:pix@ongexemplo.org.br"
-                        >pix@ongexemplo.org.br</a
+                      <a href="mailto:pix@ongSolidaria.org.br"
+                        >pix@ongSolidaria.org.br</a
                       >
                     </li>
                   </ul>
@@ -179,7 +267,12 @@
                   de nossa plataforma segura.
                 </li>
               </ul>
-              <a href="#" class="btn btn-primary">Doar Online (Em Breve)</a>
+              <button
+                class="btn btn-primary btn-lg"
+                onclick="showDonateAlert()"
+              >
+                Fazer uma Doação
+              </button>
             </div>
             <img src="imagens/coracao.jpg" alt="Mãos segurando um coração" />
           </div>
@@ -187,20 +280,41 @@
       </section>
     </main>
 
+    <!-- Modal de Detalhes do Projeto -->
+    <div class="modal" id="projectModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="projectModalTitle">
+            Detalhes do Projeto
+          </h3>
+          <button class="modal-close" onclick="closeProjectModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" id="projectModalBody">
+          <!-- Conteúdo dinâmico -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn" onclick="closeProjectModal()">Fechar</button>
+          <a href="cadastro.html" class="btn btn-primary">Quero Participar</a>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="container">
-        <p>&copy; 2023 ONG Exemplo. Todos os direitos reservados.</p>
+        <p>&copy; 2023 ONG Solidária. Todos os direitos reservados.</p>
         <p>Rua da Esperança, 123 - Centro, Cidade Futura - CF</p>
         <div class="social-links">
-          <a href="#" aria-label="Facebook"
-            ><span class="icon-facebook">FB</span></a
-          >
-          <a href="#" aria-label="Instagram"
-            ><span class="icon-instagram">IG</span></a
-          >
-          <a href="#" aria-label="Twitter"
-            ><span class="icon-twitter">TW</span></a
-          >
+          <a href="https://facebook.com/sua-ong" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://instagram.com/sua-ong" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com/sua-ong" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
     </footer>
