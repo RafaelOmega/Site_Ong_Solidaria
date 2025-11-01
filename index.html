@@ -5,179 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="ONG Exemplo - Transformando Vidas através de Projetos Sociais. Conheça nossa missão, impacto e como você pode ajudar."
+      content="ONG Solidária - Transformando Vidas através de Projetos Sociais. Conheça nossa missão, impacto e como você pode ajudar."
     />
     <meta
       name="keywords"
       content="ONG, organização não governamental, projetos sociais, doação, voluntariado, impacto social, caridade, causas sociais"
     />
-    <meta name="author" content="ONG Exemplo" />
-    <title>ONG Exemplo - Transformando Vidas</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="ONG Solidária" />
+    <title>ONG Solidária - Transformando Vidas</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
   <body>
+    <div class="toast-container" id="toastContainer"></div>
+    <div class="overlay" id="overlay"></div>
+
     <header>
       <div class="container">
-        <a href="index.html" class="logo">ONG Exemplo</a>
-        <nav>
+        <a href="#/" class="logo">ONG Solidária</a>
+        <nav id="mainNav">
           <ul>
-            <li><a href="index.html" class="active">Início</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#/" data-route="/">Início</a></li>
+            <li>
+              <a href="#/projetos" data-route="/projetos">Projetos</a>
+              <ul class="dropdown">
+                <li><a href="#/projetos#educacao">Educação</a></li>
+                <li><a href="#/projetos#saude">Saúde</a></li>
+                <li><a href="#/projetos#meio-ambiente">Meio Ambiente</a></li>
+                <li><a href="#/projetos#assistencia">Assistência Social</a></li>
+              </ul>
+            </li>
+            <li><a href="#/cadastro" data-route="/cadastro">Cadastro</a></li>
+            <li><a href="#/contato" data-route="/contato">Contato</a></li>
           </ul>
         </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <h1>Transformando Vidas, Construindo Futuros</h1>
-          <p>
-            Nossa missão é criar um impacto positivo duradouro na comunidade,
-            promovendo a educação, saúde e desenvolvimento social. Junte-se a
-            nós!
-          </p>
-          <a href="projetos.html" class="btn">Conheça Nossos Projetos</a>
-        </div>
-      </section>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#/">Início</a></li>
+        <li><a href="#/projetos">Projetos</a></li>
+        <li><a href="#/projetos#educacao">→ Educação</a></li>
+        <li><a href="#/projetos#saude">→ Saúde</a></li>
+        <li><a href="#/projetos#meio-ambiente">→ Meio Ambiente</a></li>
+        <li><a href="#/projetos#assistencia">→ Assistência Social</a></li>
+        <li><a href="#/cadastro">Cadastro</a></li>
+        <li><a href="#/contato">Contato</a></li>
+      </ul>
+    </div>
 
-      <section id="about" class="about-section">
-        <div class="container">
-          <h2>Sobre a Organização</h2>
-          <div class="content">
-            <div class="text-content">
-              <p>
-                A ONG Exemplo foi fundada em 2005 por um grupo de voluntários
-                dedicados, com o objetivo de combater a desigualdade social e
-                promover oportunidades para crianças e famílias em situação de
-                vulnerabilidade. Desde então, crescemos e expandimos nossos
-                programas, sempre com a paixão por fazer a diferença.
-              </p>
-              <p>
-                Nossa visão é uma sociedade mais justa e equitativa, onde todos
-                tenham acesso a direitos básicos e oportunidades de
-                desenvolvimento. Nossos valores fundamentais são integridade,
-                solidariedade, transparência e respeito.
-              </p>
-              <a href="cadastro.html" class="btn btn-primary"
-                >Seja um Voluntário</a
-              >
-            </div>
-            <img
-              src="imagens/projeto-educacao.jpg"
-              alt="Crianças sorrindo em um ambiente de aprendizado"
-            />
-          </div>
-        </div>
-      </section>
+    <main id="app" aria-live="polite"></main>
 
-      <section id="impact" class="impact-section">
-        <div class="container">
-          <h2>Nosso Impacto em Números</h2>
-          <p>Com sua ajuda, alcançamos resultados significativos:</p>
-          <div class="impact-grid">
-            <div class="impact-item">
-              <h3>+500</h3>
-              <p>Crianças Atendidas</p>
-            </div>
-            <div class="impact-item">
-              <h3>+150</h3>
-              <p>Famílias Apoiadas</p>
-            </div>
-            <div class="impact-item">
-              <h3>+2000</h3>
-              <p>Refeições Distribuídas</p>
-            </div>
-            <div class="impact-item">
-              <h3>+80</h3>
-              <p>Voluntários Ativos</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="team" class="team-section">
-        <div class="container">
-          <h2>Nossa Equipe</h2>
-          <p>Conheça os rostos por trás da ONG Exemplo:</p>
-          <div class="team-grid">
-            <article class="team-member">
-              <img src="imagens/team-member-1.jpg" alt="Maria Silva" />
-              <h3>Maria Silva</h3>
-              <p>Fundadora & Presidente</p>
-            </article>
-            <article class="team-member">
-              <img src="imagens/team-member-2.jpg" alt="João Oliveira" />
-              <h3>João Oliveira</h3>
-              <p>Coordenador de Projetos</p>
-            </article>
-            <article class="team-member">
-              <img src="imagens/team-member-3.jpg" alt="Ana Souza" />
-              <h3>Ana Souza</h3>
-              <p>Gerente de Voluntariado</p>
-            </article>
-            <article class="team-member">
-              <img src="imagens/team-member-4.jpg" alt="Pedro Santos" />
-              <h3>Pedro Santos</h3>
-              <p>Comunicação e Marketing</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div class="container">
-          <h2>Entre em Contato</h2>
-          <div class="contact-info">
-            <p>
-              <strong>Endereço:</strong> Rua da Esperança, 123 - Centro, Cidade
-              Futura - CF
-            </p>
-            <p>
-              <strong>Telefone:</strong>
-              <a href="tel:+5511987654321">(11) 98765-4321</a>
-            </p>
-            <p>
-              <strong>E-mail:</strong>
-              <a href="mailto:contato@ongexemplo.org.br"
-                >contato@ongexemplo.org.br</a
-              >
-            </p>
-          </div>
-          <div class="contact-map">
-            <img
-              src="imagens/mapa-localizacao.jpg"
-              alt="Mapa de localização da ONG"
-            />
-          </div>
-        </div>
-      </section>
-    </main>
+    <!-- Modais globais (injetados pelos templates quando necessário) -->
+    <div class="modal" id="contactModal" aria-hidden="true"></div>
+    <div class="modal" id="projectModal" aria-hidden="true"></div>
 
     <footer>
       <div class="container">
-        <p>&copy; 2023 ONG Exemplo. Todos os direitos reservados.</p>
+        <p>&copy; 2023 ONG Solidária. Todos os direitos reservados.</p>
         <p>Rua da Esperança, 123 - Centro, Cidade Futura - CF</p>
         <div class="social-links">
-          <a href="https://facebook.com/sua-ong" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://instagram.com/sua-ong" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://twitter.com/sua-ong" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
+          <a href="https://facebook.com/sua-ong" aria-label="Facebook"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com/sua-ong" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com/sua-ong" aria-label="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
         </div>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/core/templates.js"></script>
+    <script src="js/core/router.js"></script>
+    <script src="js/features/ui/toast.js"></script>
+    <script src="js/features/ui/modal.js"></script>
+    <script src="js/features/forms/validation.js"></script>
+    <script src="js/features/navigation/menu.js"></script>
+    <script src="js/features/animations/observer.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
